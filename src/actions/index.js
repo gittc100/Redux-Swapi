@@ -14,12 +14,12 @@ export const FETCH_CHARACTERS_FAILURE = 'FETCH_CHARACTERS_FAILURE';
 export const fetchCharacters = () => dispatch => {
     dispatch({ type: FETCH_CHARACTERS_START });
     axios
-        .get('https://swapi.co/api/people')
-        .then(response => {
-            console.log(response);
-            dispatch({ type: FETCH_CHARACTERS_SUCCESS, payload: response.results});
-        })
-        .catch(err => {
-            dispatch({ type: FETCH_CHARACTERS_FAILURE, payload: err})
-        });
+    .get('https://swapi.co/api/people/')
+    .then(response => {
+        console.log(response);
+        dispatch({ type: FETCH_CHARACTERS_SUCCESS, payload: response.results});
+    })
+    .catch(err => {
+        dispatch({ type: FETCH_CHARACTERS_FAILURE, payload: err});
+    });
 };
